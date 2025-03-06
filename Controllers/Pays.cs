@@ -9,7 +9,6 @@ public class Pays
     /// <param name="id">Id del pago.</param>
     public async Task<Payment> Read(long id)
     {
-
         // Cliente.
         Client client = Service.GetClient($"v1/payments/{id}");
 

@@ -9,16 +9,16 @@ public class Payment
     public long Id { get; set; }
 
     [JsonProperty("date_created")]
-    public DateTime DateCreated { get; set; }
+    public DateTime? DateCreated { get; set; }
 
     [JsonProperty("date_approved")]
-    public DateTime DateApproved { get; set; }
+    public DateTime? DateApproved { get; set; }
 
     [JsonProperty("date_last_updated")]
-    public DateTime DateLastUpdated { get; set; }
+    public DateTime? DateLastUpdated { get; set; }
 
     [JsonProperty("money_release_date")]
-    public DateTime MoneyReleaseDate { get; set; }
+    public DateTime? MoneyReleaseDate { get; set; }
 
     [JsonProperty("payment_method_id")]
     public string PaymentMethodId { get; set; }
