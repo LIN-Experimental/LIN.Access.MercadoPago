@@ -59,7 +59,7 @@ public class Payer
 public class PaymentMethods
 {
     [JsonProperty("excluded_payment_methods")]
-    public List<string> ExcludedPaymentMethods { get; set; } = new List<string>();
+    public List<object> ExcludedPaymentMethods { get; set; } = new List<object>();
 
     [JsonProperty("excluded_payment_types")]
     public List<string> ExcludedPaymentTypes { get; set; } = new List<string>();
