@@ -22,7 +22,6 @@ internal class OrderIntegration : IOrderIntegration
         return response;
     }
 
-
     /// <summary>
     /// Obtener las ordenes asociadas.
     /// </summary>
