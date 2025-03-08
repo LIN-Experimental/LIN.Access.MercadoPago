@@ -1,6 +1,4 @@
-﻿using Newtonsoft.Json;
-
-namespace LIN.Access.MercadoPago.Models;
+﻿namespace LIN.Access.MercadoPago.Models;
 
 public class Order
 {
