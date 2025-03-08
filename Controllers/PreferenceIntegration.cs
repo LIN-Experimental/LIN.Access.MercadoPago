@@ -1,6 +1,6 @@
 ﻿namespace LIN.Access.MercadoPago.Controllers;
 
-public class Preferences
+internal class PreferenceIntegration : IPreferenceIntegration
 {
 
     /// <summary>
@@ -14,7 +14,7 @@ public class Preferences
         Client client = Service.GetClient("checkout/preferences");
 
         // Headers
-         client.AddHeader("Authorization", $"Bearer {Build.AccessToken}");
+        client.AddHeader("Authorization", $"Bearer {Build.AccessToken}");
 
         // Respuesta.
         var response = await client.Post<PaymentResponse>(model);

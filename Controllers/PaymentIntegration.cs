@@ -1,6 +1,6 @@
 ﻿namespace LIN.Access.MercadoPago.Controllers;
 
-public class Pays
+internal class PaymentIntegration : IPaymentIntegration
 {
 
     /// <summary>

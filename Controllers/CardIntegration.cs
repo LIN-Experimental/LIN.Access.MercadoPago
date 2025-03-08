@@ -1,6 +1,6 @@
 ﻿namespace LIN.Access.MercadoPago.Controllers;
 
-public class Cards
+internal class CardIntegration : ICardIntegration
 {
 
     /// <summary>

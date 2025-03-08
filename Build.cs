@@ -18,11 +18,11 @@ public static class Build
         Service._Service.SetDefault("https://api.mercadopago.com/");
         AccessToken = token ?? string.Empty;
 
-        service.AddSingleton<Controllers.Cards>();
-        service.AddSingleton<Controllers.Customers>();
-        service.AddSingleton<Controllers.Orders>();
-        service.AddSingleton<Controllers.Pays>();
-        service.AddSingleton<Controllers.Preferences>();
+        service.AddSingleton<ICardIntegration, Controllers.CardIntegration>();
+        service.AddSingleton<ICustomerIntegration, Controllers.CustomerIntegration>();
+        service.AddSingleton<IOrderIntegration, Controllers.OrderIntegration>();
+        service.AddSingleton<IPaymentIntegration, Controllers.PaymentIntegration>();
+        service.AddSingleton<IPreferenceIntegration, Controllers.PreferenceIntegration>();
 
         return service;
     }

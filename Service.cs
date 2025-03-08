@@ -2,6 +2,7 @@
 global using LIN.Access.MercadoPago.Models;
 global using Newtonsoft.Json;
 global using LIN.Access.MercadoPago.Models.Shared;
+global using LIN.Access.MercadoPago.Integrations;
 
 namespace LIN.Access.MercadoPago;
 

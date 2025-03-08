@@ -1,6 +1,6 @@
 ﻿namespace LIN.Access.MercadoPago.Controllers;
 
-public class Orders
+internal class OrderIntegration : IOrderIntegration
 {
 
     /// <summary>
