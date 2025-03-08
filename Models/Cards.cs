@@ -50,15 +50,6 @@ public class Cardholder
     public IdentificationModel Identification { get; set; }
 }
 
-public class Metadata
-{
-    [JsonProperty("source_sync")]
-    public string SourceSync { get; set; }
-}
-
-
-
-
 public class CardResponse
 {
     [JsonProperty("id")]

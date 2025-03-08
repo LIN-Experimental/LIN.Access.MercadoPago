@@ -21,6 +21,9 @@ public class PaymentRequest
 
     [JsonProperty("external_reference")]
     public string ExternalReference { get; set; }
+
+    [JsonProperty("statement_descriptor")]
+    public string StatementDescriptor { get; set; }
 }
 
 public class Item
@@ -54,6 +57,18 @@ public class Payer
 {
     [JsonProperty("email")]
     public string Email { get; set; }
+
+    [JsonProperty("identification")]
+    public Identification Identification { get; set; }
+}
+
+public class Identification
+{
+    [JsonProperty("type")]
+    public string Type { get; set; }
+
+    [JsonProperty("number")]
+    public string Number { get; set; }
 }
 
 public class PaymentMethods
