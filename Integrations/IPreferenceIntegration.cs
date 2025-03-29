@@ -1,7 +1,6 @@
-﻿namespace LIN.Access.MercadoPago.Integrations
+﻿namespace LIN.Access.MercadoPago.Integrations;
+
+public interface IPreferenceIntegration
 {
-    public interface IPreferenceIntegration
-    {
-        Task<PaymentResponse> Create(PaymentRequest model);
-    }
+    Task<PaymentResponse> Create(PaymentRequest model);
 }

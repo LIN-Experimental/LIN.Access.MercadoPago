@@ -61,7 +61,7 @@ internal class CardIntegration : ICardIntegration
     /// <summary>
     /// Obtener la lista de tarjetas de un cliente.
     /// </summary>
-    /// <param name="id">Id del token.</param>
+    /// <param name="id">Id del cliente.</param>
     public async Task<List<Card>> Get(string id)
     {
 

@@ -1,8 +1,8 @@
-﻿namespace LIN.Access.MercadoPago.Integrations
+﻿namespace LIN.Access.MercadoPago.Integrations;
+
+public interface IPaymentIntegration
 {
-    public interface IPaymentIntegration
-    {
-        Task<Payment> Read(long id);
-        Task<string> Refund(long id);
-    }
+    Task<RootResponse<Payment>> ReadAll(string externalReference);
+    Task<Payment> Read(long id);
+    Task<string> Refund(long id);
 }

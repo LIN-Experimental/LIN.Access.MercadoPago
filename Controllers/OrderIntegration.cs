@@ -37,6 +37,7 @@ internal class OrderIntegration : IOrderIntegration
 
         // Respuesta.
         var response = await client.Get<Root>();
+        var response2 = await client.Get();
 
         return response;
     }

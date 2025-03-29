@@ -62,7 +62,7 @@ internal class CustomerIntegration : ICustomerIntegration
     /// Obtener cliente por correo.
     /// </summary>
     /// <param name="mail">Correo del cliente.</param>
-    public async Task<ApiResponse> ReadByMail(string mail)
+    public async Task<RootResponse<CustomerModel>> ReadByMail(string mail)
     {
 
         // Cliente.
@@ -73,7 +73,7 @@ internal class CustomerIntegration : ICustomerIntegration
         client.AddParameter("email", mail);
 
         // Respuesta.
-        var response = await client.Get<ApiResponse>();
+        var response = await client.Get<RootResponse<CustomerModel>>();
 
         return response;
     }

@@ -1,7 +1,5 @@
 ﻿namespace LIN.Access.MercadoPago.Models;
 
-
-
 public class Issuer
 {
     [JsonProperty("id")]
@@ -47,7 +45,7 @@ public class Cardholder
     public string Name { get; set; }
 
     [JsonProperty("identification")]
-    public IdentificationModel Identification { get; set; }
+    public Identification Identification { get; set; }
 }
 
 public class CardResponse

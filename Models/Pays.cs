@@ -1,8 +1,5 @@
 ﻿namespace LIN.Access.MercadoPago.Models;
 
-using Newtonsoft.Json;
-using System;
-
 public class Payment
 {
     [JsonProperty("id")]

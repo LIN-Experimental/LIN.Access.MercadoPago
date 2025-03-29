@@ -1,6 +1,7 @@
 ﻿global using Global.Http.Services;
 global using LIN.Access.MercadoPago.Integrations;
 global using LIN.Access.MercadoPago.Models;
+global using LIN.Access.MercadoPago.Models.Api;
 global using LIN.Access.MercadoPago.Models.Shared;
 global using Newtonsoft.Json;
 

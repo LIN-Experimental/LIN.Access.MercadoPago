@@ -4,6 +4,6 @@ public interface ICustomerIntegration
 {
     Task<CustomerModel> Create(CustomerModel model);
     Task<CustomerModel> Read(string id);
-    Task<ApiResponse> ReadByMail(string mail);
+    Task<RootResponse<CustomerModel>> ReadByMail(string mail);
     Task<CustomerModel> Update(CustomerModel model);
 }
