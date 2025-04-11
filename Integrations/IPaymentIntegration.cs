@@ -2,7 +2,7 @@
 
 public interface IPaymentIntegration
 {
-    Task<RootResponse<Payment>> ReadAll(string externalReference);
-    Task<Payment> Read(long id);
-    Task<string> Refund(long id);
+    Task<RootResponse<Payment>> ReadAll(string externalReference, string accessToken);
+    Task<Payment> Read(long id, string accessToken);
+    Task<string> Refund(long id, string accessToken);
 }

@@ -7,13 +7,13 @@ internal class PaymentIntegration : IPaymentIntegration
     /// Obtener los pagos asociados a una referencia externa.
     /// </summary>
     /// <param name="externalReference">Referencia externa.</param>
-    public async Task<RootResponse<Payment>> ReadAll(string externalReference)
+    public async Task<RootResponse<Payment>> ReadAll(string externalReference, string accessToken)
     {
         // Cliente.
         Client client = Service.GetClient($"v1/payments/search");
 
         // Headers
-        client.AddHeader("Authorization", $"Bearer {Build.AccessToken}");
+        client.AddHeader("Authorization", $"Bearer {accessToken}");
 
         // Parametros.
         client.AddParameter("sort", "date_created");
@@ -32,13 +32,13 @@ internal class PaymentIntegration : IPaymentIntegration
     /// Obtener un pago.
     /// </summary>
     /// <param name="id">Id del pago.</param>
-    public async Task<Payment> Read(long id)
+    public async Task<Payment> Read(long id, string accessToken)
     {
         // Cliente.
         Client client = Service.GetClient($"v1/payments/{id}");
 
         // Headers
-        client.AddHeader("Authorization", $"Bearer {Build.AccessToken}");
+        client.AddHeader("Authorization", $"Bearer {accessToken}");
 
         // Respuesta.
         var response = await client.Get<Payment>();
@@ -49,14 +49,14 @@ internal class PaymentIntegration : IPaymentIntegration
     /// Reembolsar un pago.
     /// </summary>
     /// <param name="id">Id del pago.</param>
-    public async Task<string> Refund(long id)
+    public async Task<string> Refund(long id, string accessToken)
     {
 
         // Cliente.
         Client client = Service.GetClient($"v1/payments/{id}/refunds");
 
         // Headers
-        client.AddHeader("Authorization", $"Bearer {Build.AccessToken}");
+        client.AddHeader("Authorization", $"Bearer {accessToken}");
         client.AddHeader("X-Idempotency-Key", $"{Guid.NewGuid()}");
 
         // Respuesta.

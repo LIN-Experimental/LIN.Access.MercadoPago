@@ -7,13 +7,13 @@ internal class CardIntegration : ICardIntegration
     /// Crear nueva tarjeta.
     /// </summary>
     /// <param name="model">Modelo de la tarjeta.</param>
-    public async Task<CardResponse> Create(Card model)
+    public async Task<CardResponse> Create(Card model, string accessToken)
     {
         // Cliente.
         Client client = Service.GetClient("v1/card_tokens");
 
         // Headers
-        client.AddHeader("Authorization", $"Bearer {Build.AccessToken}");
+        client.AddHeader("Authorization", $"Bearer {accessToken}");
 
         // Respuesta.
         var response = await client.Post<CardResponse>(new
@@ -41,13 +41,13 @@ internal class CardIntegration : ICardIntegration
     /// </summary>
     /// <param name="id">Id del cliente.</param>
     /// <param name="token">Token de tarjeta.</param>
-    public async Task<CardResponse> Save(string id, string token)
+    public async Task<CardResponse> Save(string id, string token, string accessToken)
     {
         // Cliente.
         Client client = Service.GetClient($"v1/customers/{id}/cards");
 
         // Headers
-        client.AddHeader("Authorization", $"Bearer {Build.AccessToken}");
+        client.AddHeader("Authorization", $"Bearer {accessToken}");
 
         // Respuesta.
         var response = await client.Post<CardResponse>(new
@@ -62,14 +62,14 @@ internal class CardIntegration : ICardIntegration
     /// Obtener la lista de tarjetas de un cliente.
     /// </summary>
     /// <param name="id">Id del cliente.</param>
-    public async Task<List<Card>> Get(string id)
+    public async Task<List<Card>> Get(string id, string accessToken)
     {
 
         // Cliente.
         Client client = Service.GetClient($"v1/customers/{id}/cards");
 
         // Headers
-        client.AddHeader("Authorization", $"Bearer {Build.AccessToken}");
+        client.AddHeader("Authorization", $"Bearer {accessToken}");
 
         // Respuesta.
         var response = await client.Get<List<Card>>();

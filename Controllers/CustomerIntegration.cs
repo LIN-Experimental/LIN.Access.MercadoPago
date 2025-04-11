@@ -7,14 +7,14 @@ internal class CustomerIntegration : ICustomerIntegration
     /// Crear nuevo cliente.
     /// </summary>
     /// <param name="model">Modelo.</param>
-    public async Task<CustomerModel> Create(CustomerModel model)
+    public async Task<CustomerModel> Create(CustomerModel model, string accessToken)
     {
 
         // Cliente.
         Client client = Service.GetClient("v1/customers");
 
         // Headers
-        client.AddHeader("Authorization", $"Bearer {Build.AccessToken}");
+        client.AddHeader("Authorization", $"Bearer {accessToken}");
 
         // Respuesta.
         var response = await client.Post<CustomerModel>(new
@@ -43,14 +43,14 @@ internal class CustomerIntegration : ICustomerIntegration
     /// Obtener un cliente mediante el Id.
     /// </summary>
     /// <param name="id">Id del cliente.</param>
-    public async Task<CustomerModel> Read(string id)
+    public async Task<CustomerModel> Read(string id, string accessToken)
     {
 
         // Cliente.
         Client client = Service.GetClient($"v1/customers/{id}");
 
         // Headers
-        client.AddHeader("Authorization", $"Bearer {Build.AccessToken}");
+        client.AddHeader("Authorization", $"Bearer {accessToken}");
 
         // Respuesta.
         var response = await client.Get<CustomerModel>();
@@ -62,14 +62,14 @@ internal class CustomerIntegration : ICustomerIntegration
     /// Obtener cliente por correo.
     /// </summary>
     /// <param name="mail">Correo del cliente.</param>
-    public async Task<RootResponse<CustomerModel>> ReadByMail(string mail)
+    public async Task<RootResponse<CustomerModel>> ReadByMail(string mail, string accessToken)
     {
 
         // Cliente.
         Client client = Service.GetClient($"v1/customers/search");
 
         // Headers
-        client.AddHeader("Authorization", $"Bearer {Build.AccessToken}");
+        client.AddHeader("Authorization", $"Bearer {accessToken}");
         client.AddParameter("email", mail);
 
         // Respuesta.
@@ -82,14 +82,14 @@ internal class CustomerIntegration : ICustomerIntegration
     /// Actualizar un cliente.
     /// </summary>
     /// <param name="model">Modelo.</param>
-    public async Task<CustomerModel> Update(CustomerModel model)
+    public async Task<CustomerModel> Update(CustomerModel model, string accessToken)
     {
 
         // Cliente.
         Client client = Service.GetClient($"v1/customers/{model.Id}");
 
         // Headers
-        client.AddHeader("Authorization", $"Bearer {Build.AccessToken}");
+        client.AddHeader("Authorization", $"Bearer {accessToken}");
 
         // Respuesta.
         var response = await client.Post<CustomerModel>(new

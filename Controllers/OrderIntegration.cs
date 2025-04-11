@@ -7,14 +7,14 @@ internal class OrderIntegration : IOrderIntegration
     /// Obtener una orden.
     /// </summary>
     /// <param name="id">Id de la orden.</param>
-    public async Task<Order> Read(long id)
+    public async Task<Order> Read(long id, string accessToken)
     {
 
         // Cliente.
         Client client = Service.GetClient($"merchant_orders/{id}");
 
         // Headers
-        client.AddHeader("Authorization", $"Bearer {Build.AccessToken}");
+        client.AddHeader("Authorization", $"Bearer {accessToken}");
 
         // Respuesta.
         var response = await client.Get<Order>();
@@ -26,14 +26,14 @@ internal class OrderIntegration : IOrderIntegration
     /// Obtener las ordenes asociadas.
     /// </summary>
     /// <param name="externalReference">Referencia.</param>
-    public async Task<Root> ReadAll(string externalReference)
+    public async Task<Root> ReadAll(string externalReference, string accessToken)
     {
 
         // Cliente.
         Client client = Service.GetClient($"merchant_orders/search?external_reference={externalReference}");
 
         // Headers
-        client.AddHeader("Authorization", $"Bearer {Build.AccessToken}");
+        client.AddHeader("Authorization", $"Bearer {accessToken}");
 
         // Respuesta.
         var response = await client.Get<Root>();

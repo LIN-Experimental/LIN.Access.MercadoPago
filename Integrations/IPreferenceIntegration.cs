@@ -2,5 +2,5 @@
 
 public interface IPreferenceIntegration
 {
-    Task<PaymentResponse> Create(PaymentRequest model);
+    Task<PaymentResponse> Create(PaymentRequest model, string accessToken);
 }
