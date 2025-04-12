@@ -17,6 +17,7 @@ public static class Build
         service.AddSingleton<IOrderIntegration, Controllers.OrderIntegration>();
         service.AddSingleton<IPaymentIntegration, Controllers.PaymentIntegration>();
         service.AddSingleton<IPreferenceIntegration, Controllers.PreferenceIntegration>();
+        service.AddSingleton<IProfileIntegration, Controllers.ProfileIntegration>();
 
         return service;
     }
