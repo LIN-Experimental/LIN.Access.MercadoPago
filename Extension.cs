@@ -2,7 +2,7 @@
 
 namespace LIN.Access.MercadoPago;
 
-public static class Build
+public static class Extension
 {
     /// <summary>
     /// Utilizar Mercado Pago API.
